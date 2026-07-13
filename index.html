@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Simply Henna | Henna met aandacht voor jou
+  </title>
+
+  <meta
+    name="description"
+    content="Persoonlijke hennadesigns met aandacht aangebracht. Bekijk Simply Henna en maak eenvoudig een afspraak."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #f7f1eb;
+      --card: #fffaf6;
+      --brown: #4e342e;
+      --dark-brown: #3b2723;
+      --soft-brown: #8d6e63;
+      --light-brown: #eaded5;
+      --border: rgba(78, 52, 46, 0.12);
+    }
+
+
+    /* =========================
+       BASIS
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(141, 110, 99, 0.12),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 55%,
+          rgba(78, 52, 46, 0.08),
+          transparent 35%
+        ),
+        var(--background);
+
+      color: var(--brown);
+
+      font-family:
+        "Poppins",
+        sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(
+        1120px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       NAVIGATIE
+    ========================= */
+
+    header {
+      padding: 22px 0;
+    }
+
+    .nav {
+      min-height: 68px;
+
+      padding:
+        12px
+        14px
+        12px
+        24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
+
+      background:
+        rgba(
+          255,
+          250,
+          246,
+          0.82
+        );
+
+      border:
+        1px
+        solid
+        var(--border);
+
+      border-radius: 999px;
+
+      box-shadow:
+        0
+        15px
+        40px
+        rgba(
+          78,
+          52,
+          46,
+          0.06
+        );
+
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--dark-brown);
+
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-dot {
+      width: 9px;
+      height: 9px;
+
+      background: var(--brown);
+
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 28px;
+    }
+
+    .nav-link {
+      color: var(--soft-brown);
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      transition:
+        color
+        0.2s
+        ease;
+    }
+
+    .nav-link:hover {
+      color: var(--dark-brown);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        13px
+        22px;
+
+      background: var(--brown);
+      color: #ffffff;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .nav-button:hover {
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--dark-brown);
+
+      box-shadow:
+        0
+        8px
+        20px
+        rgba(
+          78,
+          52,
+          46,
+          0.16
+        );
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding:
+        60px
+        0
+        40px;
+    }
+
+    .hero-card {
+      min-height: 570px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        80px
+        70px;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        rgba(
+          255,
+          250,
+          246,
+          0.9
+        );
+
+      border:
+        1px
+        solid
+        var(--border);
+
+      border-radius: 34px;
+
+      box-shadow:
+        0
+        25px
+        70px
+        rgba(
+          78,
+          52,
+          46,
+          0.09
+        );
+
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+      height: 430px;
+
+      right: -130px;
+      top: -160px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(
+          234,
+          222,
+          213,
+          0.8
+        );
+    }
+
+    .hero-card::after {
+      content: "✦";
+
+      position: absolute;
+
+      right: 100px;
+      bottom: 50px;
+
+      color: var(--light-brown);
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 230px;
+
+      line-height: 1;
+
+      transform:
+        rotate(12deg);
+    }
+
+    .hero-content {
+      width: 100%;
+
+      max-width: 660px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      margin-bottom: 25px;
+
+      padding:
+        10px
+        16px;
+
+      background:
+        var(--light-brown);
+
+      border-radius: 999px;
+
+      color: var(--brown);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.04em;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+
+      background: var(--brown);
+
+      border-radius: 50%;
+    }
+
+    h1 {
+      max-width: 650px;
+
+      color:
+        var(--dark-brown);
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size:
+        clamp(
+          55px,
+          8vw,
+          94px
+        );
+
+      font-weight: 400;
+
+      line-height: 0.98;
+
+      letter-spacing:
+        -0.025em;
+
+      margin-bottom: 27px;
+    }
+
+    .hero-text {
+      max-width: 570px;
+
+      color:
+        var(--soft-brown);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 35px;
+    }
+
+
+    /* =========================
+       KNOPPEN
+    ========================= */
+
+    .primary-button,
+    .secondary-button {
+      min-height: 50px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        0
+        25px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .primary-button {
+      background:
+        var(--brown);
+
+      color: #ffffff;
+    }
+
+    .primary-button:hover {
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--dark-brown);
+
+      box-shadow:
+        0
+        8px
+        20px
+        rgba(
+          78,
+          52,
+          46,
+          0.16
+        );
+    }
+
+    .secondary-button {
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.55
+        );
+
+      color:
+        var(--brown);
+
+      border:
+        1px
+        solid
+        var(--border);
+    }
+
+    .secondary-button:hover {
+      transform:
+        translateY(-2px);
+
+      background: #ffffff;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .intro-section {
+      padding:
+        80px
+        0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      color:
+        var(--soft-brown);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      color:
+        var(--dark-brown);
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size:
+        clamp(
+          40px,
+          6vw,
+          62px
+        );
+
+      font-weight: 400;
+
+      line-height: 1.05;
+    }
+
+    .features {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap: 18px;
+    }
+
+    .feature-card {
+      min-height: 290px;
+
+      padding: 35px;
+
+      display: flex;
+      flex-direction: column;
+
+      background:
+        rgba(
+          255,
+          250,
+          246,
+          0.88
+        );
+
+      border:
+        1px
+        solid
+        var(--border);
+
+      border-radius: 25px;
+
+      box-shadow:
+        0
+        15px
+        45px
+        rgba(
+          78,
+          52,
+          46,
+          0.05
+        );
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0
+        22px
+        55px
+        rgba(
+          78,
+          52,
+          46,
+          0.09
+        );
+    }
+
+    .feature-icon {
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 35px;
+
+      background:
+        var(--light-brown);
+
+      border-radius: 50%;
+
+      font-size: 22px;
+    }
+
+    .feature-card h3 {
+      color:
+        var(--dark-brown);
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 27px;
+
+      font-weight: 400;
+
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color:
+        var(--soft-brown);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+    .feature-link {
+      margin-top: auto;
+
+      padding-top: 25px;
+
+      color:
+        var(--brown);
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       AFSPRAAK
+    ========================= */
+
+    .booking-section {
+      padding:
+        40px
+        0
+        90px;
+    }
+
+    .booking-card {
+      padding: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 50px;
+
+      background:
+        var(--brown);
+
+      color: #ffffff;
+
+      border-radius: 32px;
+
+      box-shadow:
+        0
+        25px
+        70px
+        rgba(
+          78,
+          52,
+          46,
+          0.18
+        );
+    }
+
+    .booking-content {
+      max-width: 620px;
+    }
+
+    .booking-label {
+      margin-bottom: 13px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.65
+        );
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+    }
+
+    .booking-card h2 {
+      color: #ffffff;
+
+      margin-bottom: 18px;
+    }
+
+    .booking-card p {
+      max-width: 530px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.72
+        );
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    .booking-button {
+      flex-shrink: 0;
+
+      min-height: 54px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        0
+        28px;
+
+      background: #ffffff;
+
+      color:
+        var(--brown);
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .booking-button:hover {
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0
+        12px
+        30px
+        rgba(
+          0,
+          0,
+          0,
+          0.15
+        );
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding:
+        0
+        0
+        40px;
+    }
+
+    .footer {
+      padding-top: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
+
+      border-top:
+        1px
+        solid
+        var(--border);
+    }
+
+    .footer-brand {
+      color:
+        var(--dark-brown);
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 22px;
+    }
+
+    .footer-text {
+      color:
+        var(--soft-brown);
+
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color:
+        var(--soft-brown);
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      transition:
+        color
+        0.2s
+        ease;
+    }
+
+    .footer-links a:hover {
+      color:
+        var(--dark-brown);
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 850px) {
+      .nav-links .nav-link {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 35px;
+      }
+
+      .hero-card {
+        min-height: auto;
+
+        padding:
+          65px
+          45px;
+      }
+
+      .hero-card::after {
+        right: 20px;
+
+        font-size: 170px;
+
+        opacity: 0.6;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        min-height: 250px;
+      }
+
+      .booking-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding:
+          55px
+          45px;
+      }
+    }
+
+
+    /* =========================
+       MOBIEL
+    ========================= */
+
+    @media (max-width: 600px) {
+      .container {
+        width:
+          min(
+            calc(100% - 28px),
+            1120px
+          );
+      }
+
+      header {
+        padding:
+          14px
+          0;
+      }
+
+      .nav {
+        min-height: 62px;
+
+        padding:
+          9px
+          9px
+          9px
+          18px;
+      }
+
+      .logo {
+        font-size: 12px;
+      }
+
+      .nav-button {
+        padding:
+          12px
+          17px;
+
+        font-size: 12px;
+      }
+
+      .hero {
+        padding:
+          20px
+          0
+          25px;
+      }
+
+      .hero-card {
+        padding:
+          50px
+          25px;
+
+        border-radius: 26px;
+      }
+
+      .hero-card::before {
+        width: 280px;
+        height: 280px;
+
+        right: -150px;
+        top: -100px;
+      }
+
+      .hero-card::after {
+        right: -20px;
+        bottom: 20px;
+
+        font-size: 130px;
+
+        opacity: 0.35;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            50px,
+            17vw,
+            72px
+          );
+      }
+
+      .hero-text {
+        font-size: 14px;
+      }
+
+      .hero-buttons {
+        align-items: stretch;
+
+        flex-direction: column;
+      }
+
+      .primary-button,
+      .secondary-button {
+        width: 100%;
+      }
+
+      .intro-section {
+        padding:
+          65px
+          0;
+      }
+
+      .feature-card {
+        padding: 30px;
+
+        border-radius: 22px;
+      }
+
+      .booking-section {
+        padding-bottom: 65px;
+      }
+
+      .booking-card {
+        padding:
+          45px
+          28px;
+
+        border-radius: 26px;
+      }
+
+      .booking-button {
+        width: 100%;
+      }
+
+      .footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+    <div class="container">
+
+      <nav class="nav">
+
+        <a
+          href="index.html"
+          class="logo"
+        >
+          <span class="logo-dot"></span>
+
+          Simply Henna
+        </a>
+
+
+        <div class="nav-links">
+
+          <a
+            href="#waarom"
+            class="nav-link"
+          >
+            Over ons
+          </a>
+
+          <a
+            href="#waarom"
+            class="nav-link"
+          >
+            Waarom Simply Henna
+          </a>
+
+          <a
+            href="#afspraak"
+            class="nav-button"
+          >
+            Maak een afspraak
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-card">
+
+          <div class="hero-content">
+
+            <div class="eyebrow">
+
+              <span class="eyebrow-dot"></span>
+
+              Henna met aandacht
+
+            </div>
+
+
+            <h1>
+              Henna,<br>
+              met aandacht voor jou.
+            </h1>
+
+
+            <p class="hero-text">
+              Persoonlijke hennadesigns,
+              met aandacht aangebracht.
+              Voor een bijzonder moment
+              of gewoon omdat jij daar
+              zin in hebt.
+            </p>
+
+
+            <div class="hero-buttons">
+
+              <a
+                href="#afspraak"
+                class="primary-button"
+              >
+                Maak een afspraak
+              </a>
+
+              <a
+                href="#waarom"
+                class="secondary-button"
+              >
+                Ontdek Simply Henna
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="intro-section"
+      id="waarom"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-label">
+            Simply Henna
+          </p>
+
+          <h2>
+            Jouw moment.<br>
+            Jouw henna.
+          </h2>
+
+        </div>
+
+
+        <div class="features">
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              ✨
+            </div>
+
+            <h3>
+              Persoonlijk
+            </h3>
+
+            <p>
+              Geen moment is hetzelfde.
+              We nemen de tijd om henna
+              aan te brengen met aandacht
+              voor jou.
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              🤎
+            </div>
+
+            <h3>
+              Met aandacht
+            </h3>
+
+            <p>
+              Van het eerste contact
+              tot jouw hennadesign.
+              Rustig, persoonlijk
+              en met zorg.
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              📅
+            </div>
+
+            <h3>
+              Eenvoudig gepland
+            </h3>
+
+            <p>
+              Geen ingewikkeld gedoe.
+              Maak eenvoudig een afspraak
+              en wij nemen contact met je op.
+            </p>
+
+            <a
+              href="#afspraak"
+              class="feature-link"
+            >
+              Afspraak maken →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section
+      class="booking-section"
+      id="afspraak"
+    >
+
+      <div class="container">
+
+        <div class="booking-card">
+
+          <div class="booking-content">
+
+            <p class="booking-label">
+              Klaar voor jouw henna?
+            </p>
+
+            <h2>
+              Maak jouw afspraak.
+            </h2>
+
+            <p>
+              Plan eenvoudig jouw afspraak
+              bij Simply Henna.
+              Na je aanvraag nemen we
+              contact met je op
+              over jouw afspraak.
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfkB9LVkBBbpQSWlFjx-OC2OGK4h0yEk_P9tOa5n7LJ_DdS_Q/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="booking-button"
+          >
+            Afspraak plannen →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer">
+
+        <div>
+
+          <p class="footer-brand">
+            Simply Henna
+          </p>
+
+          <p class="footer-text">
+            ©
+            <span id="year"></span>
+            Simply Henna
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="voorwaarden.html">
+            Algemene voorwaarden
+          </a>
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <a
+            href="mailto:simplyhennamanagement@gmail.com"
+          >
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    document
+      .getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
