@@ -9,19 +9,14 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Simply Henna | Henna met aandacht voor jou
-  </title>
+  <title>Simply Henna | Henna met aandacht voor jou</title>
 
   <meta
     name="description"
-    content="Persoonlijke hennadesigns met aandacht aangebracht. Bekijk Simply Henna en maak eenvoudig een afspraak."
+    content="Persoonlijke hennadesigns met aandacht aangebracht. Boek jouw afspraak bij Simply Henna."
   >
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
     rel="preconnect"
@@ -43,12 +38,8 @@
       --soft-brown: #8d6e63;
       --light-brown: #eaded5;
       --border: rgba(78, 52, 46, 0.12);
+      --white: #ffffff;
     }
-
-
-    /* =========================
-       BASIS
-    ========================= */
 
     * {
       box-sizing: border-box;
@@ -58,6 +49,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 110px;
     }
 
     body {
@@ -85,39 +77,36 @@
 
     a {
       color: inherit;
-    }
-
-    button,
-    a {
       -webkit-tap-highlight-color: transparent;
     }
 
-    .container {
-      width: min(
-        1120px,
-        calc(100% - 40px)
-      );
+    button {
+      font: inherit;
+    }
 
+    .container {
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
 
     /* =========================
-       NAVIGATIE
+       NAV
     ========================= */
 
     header {
       padding: 22px 0;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
     }
 
     .nav {
       min-height: 68px;
 
-      padding:
-        12px
-        14px
-        12px
-        24px;
+      padding: 12px 14px 12px 24px;
 
       display: flex;
       align-items: center;
@@ -125,33 +114,15 @@
 
       gap: 25px;
 
-      background:
-        rgba(
-          255,
-          250,
-          246,
-          0.82
-        );
+      background: rgba(255, 250, 246, 0.86);
 
-      border:
-        1px
-        solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 999px;
 
       box-shadow:
-        0
-        15px
-        40px
-        rgba(
-          78,
-          52,
-          46,
-          0.06
-        );
+        0 15px 40px rgba(78, 52, 46, 0.07);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
     }
 
     .logo {
@@ -169,6 +140,8 @@
 
       letter-spacing: 0.08em;
       text-transform: uppercase;
+
+      flex-shrink: 0;
     }
 
     .logo-dot {
@@ -184,7 +157,7 @@
       display: flex;
       align-items: center;
 
-      gap: 28px;
+      gap: 20px;
     }
 
     .nav-link {
@@ -192,13 +165,10 @@
 
       text-decoration: none;
 
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
 
-      transition:
-        color
-        0.2s
-        ease;
+      transition: color 0.2s ease;
     }
 
     .nav-link:hover {
@@ -206,16 +176,239 @@
     }
 
     .nav-button {
+      padding: 13px 22px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      padding:
-        13px
-        22px;
+      background: var(--brown);
+      color: var(--white);
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 12px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .nav-button:hover {
+      transform: translateY(-2px);
+
+      background: var(--dark-brown);
+
+      box-shadow:
+        0 8px 20px rgba(78, 52, 46, 0.16);
+    }
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    .menu-button {
+      width: 44px;
+      height: 44px;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
 
       background: var(--brown);
-      color: #ffffff;
+      color: white;
+
+      border: 0;
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      font-size: 18px;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      margin-top: 10px;
+      padding: 15px;
+
+      background: rgba(255, 250, 246, 0.96);
+
+      border: 1px solid var(--border);
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 50px rgba(78, 52, 46, 0.1);
+
+      backdrop-filter: blur(16px);
+    }
+
+    .mobile-menu.open {
+      display: grid;
+    }
+
+    .mobile-menu a {
+      padding: 14px 15px;
+
+      color: var(--brown);
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      border-radius: 14px;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--light-brown);
+    }
+
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      margin-bottom: 13px;
+
+      color: var(--soft-brown);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-weight: 400;
+    }
+
+    h2 {
+      color: var(--dark-brown);
+
+      font-size:
+        clamp(
+          40px,
+          6vw,
+          62px
+        );
+
+      line-height: 1.05;
+    }
+
+    .section-description {
+      max-width: 620px;
+
+      margin-top: 18px;
+
+      color: var(--soft-brown);
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .card {
+      padding: 35px;
+
+      background: rgba(255, 250, 246, 0.88);
+
+      border: 1px solid var(--border);
+      border-radius: 25px;
+
+      box-shadow:
+        0 15px 45px rgba(78, 52, 46, 0.05);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 22px 55px rgba(78, 52, 46, 0.09);
+    }
+
+    .card-icon {
+      width: 55px;
+      height: 55px;
+
+      margin-bottom: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--light-brown);
+
+      border-radius: 50%;
+
+      font-size: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+
+      color: var(--dark-brown);
+
+      font-size: 28px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--soft-brown);
+
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .button {
+      min-height: 50px;
+
+      padding: 0 25px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--brown);
+      color: white;
 
       border-radius: 999px;
 
@@ -230,78 +423,47 @@
         box-shadow 0.2s ease;
     }
 
-    .nav-button:hover {
-      transform:
-        translateY(-2px);
+    .button:hover {
+      transform: translateY(-2px);
 
-      background:
-        var(--dark-brown);
+      background: var(--dark-brown);
 
       box-shadow:
-        0
-        8px
-        20px
-        rgba(
-          78,
-          52,
-          46,
-          0.16
-        );
+        0 8px 20px rgba(78, 52, 46, 0.16);
+    }
+
+    .light-button {
+      background: white;
+      color: var(--brown);
     }
 
 
     /* =========================
-       HERO
+       HOME
     ========================= */
 
     .hero {
-      padding:
-        60px
-        0
-        40px;
+      padding: 35px 0 45px;
     }
 
     .hero-card {
       min-height: 570px;
 
       position: relative;
-
       overflow: hidden;
 
-      padding:
-        80px
-        70px;
+      padding: 80px 70px;
 
       display: flex;
       align-items: center;
 
-      background:
-        rgba(
-          255,
-          250,
-          246,
-          0.9
-        );
+      background: rgba(255, 250, 246, 0.9);
 
-      border:
-        1px
-        solid
-        var(--border);
-
+      border: 1px solid var(--border);
       border-radius: 34px;
 
       box-shadow:
-        0
-        25px
-        70px
-        rgba(
-          78,
-          52,
-          46,
-          0.09
-        );
-
-      backdrop-filter: blur(10px);
+        0 25px 70px rgba(78, 52, 46, 0.09);
     }
 
     .hero-card::before {
@@ -317,13 +479,7 @@
 
       border-radius: 50%;
 
-      background:
-        rgba(
-          234,
-          222,
-          213,
-          0.8
-        );
+      background: rgba(234, 222, 213, 0.8);
     }
 
     .hero-card::after {
@@ -344,13 +500,11 @@
 
       line-height: 1;
 
-      transform:
-        rotate(12deg);
+      transform: rotate(12deg);
     }
 
     .hero-content {
       width: 100%;
-
       max-width: 660px;
 
       position: relative;
@@ -359,28 +513,21 @@
     }
 
     .eyebrow {
+      margin-bottom: 25px;
+
+      padding: 10px 16px;
+
       display: inline-flex;
       align-items: center;
 
       gap: 9px;
 
-      margin-bottom: 25px;
-
-      padding:
-        10px
-        16px;
-
-      background:
-        var(--light-brown);
+      background: var(--light-brown);
 
       border-radius: 999px;
 
-      color: var(--brown);
-
       font-size: 12px;
       font-weight: 600;
-
-      letter-spacing: 0.04em;
     }
 
     .eyebrow-dot {
@@ -395,12 +542,9 @@
     h1 {
       max-width: 650px;
 
-      color:
-        var(--dark-brown);
+      margin-bottom: 27px;
 
-      font-family:
-        "DM Serif Display",
-        serif;
+      color: var(--dark-brown);
 
       font-size:
         clamp(
@@ -409,424 +553,345 @@
           94px
         );
 
-      font-weight: 400;
-
       line-height: 0.98;
 
-      letter-spacing:
-        -0.025em;
-
-      margin-bottom: 27px;
+      letter-spacing: -0.025em;
     }
 
     .hero-text {
       max-width: 570px;
 
-      color:
-        var(--soft-brown);
+      color: var(--soft-brown);
 
       font-size: 17px;
-
       line-height: 1.8;
     }
 
     .hero-buttons {
+      margin-top: 35px;
+
       display: flex;
-      align-items: center;
-
-      gap: 12px;
-
       flex-wrap: wrap;
 
-      margin-top: 35px;
+      gap: 12px;
     }
 
 
     /* =========================
-       KNOPPEN
+       SOON
     ========================= */
 
-    .primary-button,
-    .secondary-button {
-      min-height: 50px;
+    .soon-card {
+      min-height: 420px;
 
-      display: inline-flex;
+      padding: 55px;
+
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
       align-items: center;
       justify-content: center;
 
-      padding:
-        0
-        25px;
+      text-align: center;
+
+      background: rgba(255, 250, 246, 0.88);
+
+      border: 1px solid var(--border);
+      border-radius: 30px;
+
+      box-shadow:
+        0 20px 60px rgba(78, 52, 46, 0.07);
+    }
+
+    .soon-card::before {
+      content: "✦";
+
+      position: absolute;
+
+      right: -20px;
+      bottom: -70px;
+
+      color: var(--light-brown);
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 280px;
+
+      opacity: 0.7;
+    }
+
+    .soon-content {
+      max-width: 600px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .soon-badge {
+      margin-bottom: 20px;
+
+      padding: 10px 17px;
+
+      display: inline-flex;
+
+      background: var(--light-brown);
 
       border-radius: 999px;
 
-      text-decoration: none;
+      color: var(--brown);
 
-      font-size: 13px;
-      font-weight: 500;
-
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .primary-button {
-      background:
-        var(--brown);
-
-      color: #ffffff;
-    }
-
-    .primary-button:hover {
-      transform:
-        translateY(-2px);
-
-      background:
-        var(--dark-brown);
-
-      box-shadow:
-        0
-        8px
-        20px
-        rgba(
-          78,
-          52,
-          46,
-          0.16
-        );
-    }
-
-    .secondary-button {
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.55
-        );
-
-      color:
-        var(--brown);
-
-      border:
-        1px
-        solid
-        var(--border);
-    }
-
-    .secondary-button:hover {
-      transform:
-        translateY(-2px);
-
-      background: #ffffff;
-    }
-
-
-    /* =========================
-       FEATURES
-    ========================= */
-
-    .intro-section {
-      padding:
-        80px
-        0;
-    }
-
-    .section-heading {
-      max-width: 650px;
-
-      margin-bottom: 40px;
-    }
-
-    .section-label {
-      color:
-        var(--soft-brown);
-
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
 
       letter-spacing: 0.1em;
-
       text-transform: uppercase;
-
-      margin-bottom: 13px;
     }
 
-    h2 {
-      color:
-        var(--dark-brown);
-
-      font-family:
-        "DM Serif Display",
-        serif;
-
-      font-size:
-        clamp(
-          40px,
-          6vw,
-          62px
-        );
-
-      font-weight: 400;
-
-      line-height: 1.05;
+    .soon-card h2 {
+      margin-bottom: 18px;
     }
 
-    .features {
-      display: grid;
+    .soon-card p {
+      color: var(--soft-brown);
 
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
-      gap: 18px;
-    }
-
-    .feature-card {
-      min-height: 290px;
-
-      padding: 35px;
-
-      display: flex;
-      flex-direction: column;
-
-      background:
-        rgba(
-          255,
-          250,
-          246,
-          0.88
-        );
-
-      border:
-        1px
-        solid
-        var(--border);
-
-      border-radius: 25px;
-
-      box-shadow:
-        0
-        15px
-        45px
-        rgba(
-          78,
-          52,
-          46,
-          0.05
-        );
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .feature-card:hover {
-      transform:
-        translateY(-5px);
-
-      box-shadow:
-        0
-        22px
-        55px
-        rgba(
-          78,
-          52,
-          46,
-          0.09
-        );
-    }
-
-    .feature-icon {
-      width: 55px;
-      height: 55px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      margin-bottom: 35px;
-
-      background:
-        var(--light-brown);
-
-      border-radius: 50%;
-
-      font-size: 22px;
-    }
-
-    .feature-card h3 {
-      color:
-        var(--dark-brown);
-
-      font-family:
-        "DM Serif Display",
-        serif;
-
-      font-size: 27px;
-
-      font-weight: 400;
-
-      margin-bottom: 12px;
-    }
-
-    .feature-card p {
-      color:
-        var(--soft-brown);
-
-      font-size: 13px;
-
+      font-size: 14px;
       line-height: 1.8;
-    }
-
-    .feature-link {
-      margin-top: auto;
-
-      padding-top: 25px;
-
-      color:
-        var(--brown);
-
-      text-decoration: none;
-
-      font-size: 13px;
-
-      font-weight: 600;
     }
 
 
     /* =========================
-       AFSPRAAK
+       BOOK
     ========================= */
-
-    .booking-section {
-      padding:
-        40px
-        0
-        90px;
-    }
 
     .booking-card {
       padding: 70px;
+
+      background: var(--brown);
+      color: white;
+
+      border-radius: 32px;
+
+      box-shadow:
+        0 25px 70px rgba(78, 52, 46, 0.18);
+    }
+
+    .booking-card h2 {
+      color: white;
+    }
+
+    .booking-card > p {
+      max-width: 600px;
+
+      margin-top: 18px;
+
+      color: rgba(255, 255, 255, 0.72);
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .booking-options {
+      margin-top: 40px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+    }
+
+    .booking-option {
+      min-height: 150px;
+
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background: rgba(255, 255, 255, 0.1);
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+
+      color: white;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .booking-option:hover {
+      transform: translateY(-4px);
+
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .booking-icon {
+      font-size: 25px;
+    }
+
+    .booking-option strong {
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-list {
+      display: grid;
+
+      gap: 12px;
+    }
+
+    details {
+      padding: 0 25px;
+
+      background: rgba(255, 250, 246, 0.88);
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      box-shadow:
+        0 10px 35px rgba(78, 52, 46, 0.04);
+    }
+
+    summary {
+      padding: 23px 0;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 50px;
+      gap: 20px;
 
-      background:
-        var(--brown);
-
-      color: #ffffff;
-
-      border-radius: 32px;
-
-      box-shadow:
-        0
-        25px
-        70px
-        rgba(
-          78,
-          52,
-          46,
-          0.18
-        );
-    }
-
-    .booking-content {
-      max-width: 620px;
-    }
-
-    .booking-label {
-      margin-bottom: 13px;
-
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.65
-        );
-
-      font-size: 12px;
-      font-weight: 600;
-
-      letter-spacing: 0.1em;
-
-      text-transform: uppercase;
-    }
-
-    .booking-card h2 {
-      color: #ffffff;
-
-      margin-bottom: 18px;
-    }
-
-    .booking-card p {
-      max-width: 530px;
-
-      color:
-        rgba(
-          255,
-          255,
-          255,
-          0.72
-        );
+      color: var(--dark-brown);
 
       font-size: 14px;
+      font-weight: 600;
 
+      cursor: pointer;
+
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+
+      color: var(--soft-brown);
+
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      max-width: 800px;
+
+      padding: 0 0 24px;
+
+      color: var(--soft-brown);
+
+      font-size: 13px;
       line-height: 1.8;
     }
 
-    .booking-button {
-      flex-shrink: 0;
 
-      min-height: 54px;
+    /* =========================
+       REVIEWS
+    ========================= */
 
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .stars {
+      margin-bottom: 20px;
 
-      padding:
-        0
-        28px;
+      color: var(--brown);
 
-      background: #ffffff;
+      letter-spacing: 3px;
 
-      color:
-        var(--brown);
-
-      border-radius: 999px;
-
-      text-decoration: none;
-
-      font-size: 13px;
-
-      font-weight: 600;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      font-size: 15px;
     }
 
-    .booking-button:hover {
-      transform:
-        translateY(-3px);
+    .review-text {
+      min-height: 90px;
+
+      color: var(--dark-brown) !important;
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 21px !important;
+
+      line-height: 1.5 !important;
+    }
+
+    .review-name {
+      margin-top: 20px;
+
+      display: block;
+
+      color: var(--soft-brown);
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .review-cta {
+      margin-top: 25px;
+    }
+
+
+    /* =========================
+       REPORT
+    ========================= */
+
+    .report-card {
+      padding: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 40px;
+
+      background: rgba(255, 250, 246, 0.88);
+
+      border: 1px solid var(--border);
+      border-radius: 30px;
 
       box-shadow:
-        0
-        12px
-        30px
-        rgba(
-          0,
-          0,
-          0,
-          0.15
-        );
+        0 20px 60px rgba(78, 52, 46, 0.07);
+    }
+
+    .report-content {
+      max-width: 650px;
+    }
+
+    .report-content h2 {
+      margin-bottom: 17px;
+    }
+
+    .report-content p {
+      color: var(--soft-brown);
+
+      font-size: 14px;
+      line-height: 1.8;
     }
 
 
@@ -835,173 +900,113 @@
     ========================= */
 
     footer {
-      padding:
-        0
-        0
-        40px;
+      padding: 40px 0;
     }
 
     .footer {
-      padding-top: 30px;
+      padding-top: 35px;
 
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
 
-      gap: 25px;
+      gap: 40px;
 
-      border-top:
-        1px
-        solid
-        var(--border);
+      border-top: 1px solid var(--border);
     }
 
     .footer-brand {
-      color:
-        var(--dark-brown);
+      color: var(--dark-brown);
 
       font-family:
         "DM Serif Display",
         serif;
 
-      font-size: 22px;
+      font-size: 24px;
     }
 
     .footer-text {
-      color:
-        var(--soft-brown);
+      margin-top: 6px;
+
+      color: var(--soft-brown);
 
       font-size: 12px;
     }
 
     .footer-links {
-      display: flex;
-      align-items: center;
+      max-width: 600px;
 
-      gap: 20px;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+
+      gap: 12px 20px;
     }
 
     .footer-links a {
-      color:
-        var(--soft-brown);
+      color: var(--soft-brown);
 
       text-decoration: none;
 
       font-size: 12px;
-
-      transition:
-        color
-        0.2s
-        ease;
     }
 
     .footer-links a:hover {
-      color:
-        var(--dark-brown);
+      color: var(--dark-brown);
     }
 
 
     /* =========================
-       TABLET
+       RESPONSIVE
     ========================= */
 
-    @media (max-width: 850px) {
-      .nav-links .nav-link {
+    @media (max-width: 1000px) {
+      .nav-links {
         display: none;
       }
 
-      .hero {
-        padding-top: 35px;
+      .menu-button {
+        display: flex;
       }
 
-      .hero-card {
-        min-height: auto;
-
-        padding:
-          65px
-          45px;
+      .grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .hero-card::after {
-        right: 20px;
-
-        font-size: 170px;
-
-        opacity: 0.6;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card {
-        min-height: 250px;
-      }
-
-      .booking-card {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        padding:
-          55px
-          45px;
+      .booking-options {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
     }
 
-
-    /* =========================
-       MOBIEL
-    ========================= */
-
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .container {
-        width:
-          min(
-            calc(100% - 28px),
-            1120px
-          );
+        width: min(calc(100% - 28px), 1120px);
       }
 
       header {
-        padding:
-          14px
-          0;
+        padding: 14px 0;
       }
 
       .nav {
         min-height: 62px;
 
-        padding:
-          9px
-          9px
-          9px
-          18px;
+        padding: 9px 9px 9px 18px;
       }
 
       .logo {
         font-size: 12px;
       }
 
-      .nav-button {
-        padding:
-          12px
-          17px;
-
-        font-size: 12px;
-      }
-
       .hero {
-        padding:
-          20px
-          0
-          25px;
+        padding: 20px 0 25px;
       }
 
       .hero-card {
-        padding:
-          50px
-          25px;
+        min-height: auto;
+
+        padding: 50px 25px;
 
         border-radius: 26px;
       }
@@ -1037,52 +1042,68 @@
       }
 
       .hero-buttons {
-        align-items: stretch;
-
         flex-direction: column;
       }
 
-      .primary-button,
-      .secondary-button {
+      .hero-buttons .button {
         width: 100%;
       }
 
-      .intro-section {
-        padding:
-          65px
-          0;
+      .section {
+        padding: 60px 0;
       }
 
-      .feature-card {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
         padding: 30px;
 
         border-radius: 22px;
       }
 
-      .booking-section {
-        padding-bottom: 65px;
-      }
+      .soon-card {
+        min-height: 370px;
 
-      .booking-card {
-        padding:
-          45px
-          28px;
+        padding: 40px 25px;
 
         border-radius: 26px;
       }
 
-      .booking-button {
+      .booking-card {
+        padding: 45px 25px;
+
+        border-radius: 26px;
+      }
+
+      .booking-options {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-option {
+        min-height: 115px;
+      }
+
+      .report-card {
+        padding: 45px 28px;
+
+        align-items: flex-start;
+        flex-direction: column;
+
+        border-radius: 26px;
+      }
+
+      .report-card .button {
         width: 100%;
       }
 
       .footer {
-        align-items: flex-start;
-
         flex-direction: column;
       }
 
       .footer-links {
-        flex-wrap: wrap;
+        justify-content: flex-start;
       }
     }
   </style>
@@ -1092,54 +1113,88 @@
 <body>
 
   <header>
+
     <div class="container">
 
       <nav class="nav">
 
-        <a
-          href="index.html"
-          class="logo"
-        >
+        <a href="#home" class="logo">
           <span class="logo-dot"></span>
-
           Simply Henna
         </a>
 
-
         <div class="nav-links">
 
-          <a
-            href="#waarom"
-            class="nav-link"
-          >
-            Over ons
-          </a>
+          <a href="#home" class="nav-link">Home</a>
 
-          <a
-            href="#waarom"
-            class="nav-link"
-          >
-            Waarom Simply Henna
-          </a>
+          <a href="#designs" class="nav-link">Designs</a>
 
-          <a
-            href="#afspraak"
-            class="nav-button"
-          >
-            Maak een afspraak
-          </a>
+          <a href="#faq" class="nav-link">FAQ</a>
+
+          <a href="#team" class="nav-link">Ons team</a>
+
+          <a href="#socials" class="nav-link">Socials</a>
+
+          <a href="#prijzen" class="nav-link">Prijzen</a>
+
+          <a href="#reviews" class="nav-link">Reviews</a>
+
+          <a href="#boek" class="nav-button">Boek nu!</a>
 
         </div>
 
+        <button
+          class="menu-button"
+          id="menuButton"
+          aria-label="Menu openen"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
       </nav>
 
+      <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#home">Home</a>
+
+        <a href="#designs">Designs</a>
+
+        <a href="#boek">Boek nu!</a>
+
+        <a href="#faq">FAQ</a>
+
+        <a href="#team">Ons team</a>
+
+        <a href="#socials">Socials</a>
+
+        <a href="#prijzen">Prijzen</a>
+
+        <a href="#reviews">Reviews</a>
+
+        <a href="#report">Probleem melden</a>
+
+        <a
+          href="https://rooster.simplyhenna.nl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Medeweb
+        </a>
+
+      </div>
+
     </div>
+
   </header>
 
 
   <main>
 
-    <section class="hero">
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
 
       <div class="container">
 
@@ -1155,36 +1210,24 @@
 
             </div>
 
-
             <h1>
               Henna,<br>
               met aandacht voor jou.
             </h1>
 
-
             <p class="hero-text">
-              Persoonlijke hennadesigns,
-              met aandacht aangebracht.
-              Voor een bijzonder moment
-              of gewoon omdat jij daar
-              zin in hebt.
+              Persoonlijke hennadesigns, met aandacht aangebracht.
+              Voor een bijzonder moment of gewoon omdat jij daar zin in hebt.
             </p>
-
 
             <div class="hero-buttons">
 
-              <a
-                href="#afspraak"
-                class="primary-button"
-              >
-                Maak een afspraak
+              <a href="#boek" class="button">
+                Boek nu
               </a>
 
-              <a
-                href="#waarom"
-                class="secondary-button"
-              >
-                Ontdek Simply Henna
+              <a href="#reviews" class="button light-button">
+                Bekijk reviews
               </a>
 
             </div>
@@ -1198,91 +1241,357 @@
     </section>
 
 
-    <section
-      class="intro-section"
-      id="waarom"
-    >
+    <!-- DESIGNS -->
+
+    <section class="section" id="designs">
+
+      <div class="container">
+
+        <div class="soon-card">
+
+          <div class="soon-content">
+
+            <span class="soon-badge">
+              Soon
+            </span>
+
+            <h2>
+              Onze designs komen eraan.
+            </h2>
+
+            <p>
+              Binnenkort vind je hier een selectie van onze
+              hennadesigns en inspiratie voor jouw afspraak.
+              Volg ons ondertussen op social media voor onze creaties.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BOEK NU -->
+
+    <section class="section" id="boek">
+
+      <div class="container">
+
+        <div class="booking-card">
+
+          <p class="section-label">
+            Jouw afspraak
+          </p>
+
+          <h2>
+            Boek jouw henna.
+          </h2>
+
+          <p>
+            Dien direct een boekingsaanvraag in of neem contact
+            met Simply Henna op via een van onze officiële kanalen.
+          </p>
+
+          <div class="booking-options">
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdwX5WMa_q5u9G-jIZ5p1d2hK08sdz2FNMsS5tm6ihO8HGd3g/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="booking-option"
+            >
+              <span class="booking-icon">📅</span>
+
+              <strong>Boekingsformulier →</strong>
+            </a>
+
+            <a
+              href="https://www.instagram.com/simplyhenna.nl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="booking-option"
+            >
+              <span class="booking-icon">📸</span>
+
+              <strong>Instagram →</strong>
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@simplyhenna.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="booking-option"
+            >
+              <span class="booking-icon">🎵</span>
+
+              <strong>TikTok →</strong>
+            </a>
+
+            <a
+              href="mailto:simplyhennamanagement@gmail.com"
+              class="booking-option"
+            >
+              <span class="booking-icon">✉️</span>
+
+              <strong>E-mail →</strong>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section" id="faq">
 
       <div class="container">
 
         <div class="section-heading">
 
           <p class="section-label">
-            Simply Henna
+            Veelgestelde vragen
           </p>
 
           <h2>
-            Jouw moment.<br>
-            Jouw henna.
+            Misschien staat jouw antwoord hier al.
+          </h2>
+
+          <p class="section-description">
+            Alles wat je wilt weten over afspraken,
+            henna en de verzorging van jouw design.
+          </p>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <details>
+
+            <summary>
+              Hoe lang blijft henna zichtbaar?
+            </summary>
+
+            <p>
+              Henna is tijdelijk. De zichtbaarheid verschilt per persoon
+              en hangt onder andere af van de huid, de plek van het design,
+              watercontact, wrijving en de verzorging.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Hoe verzorg ik mijn henna?
+            </summary>
+
+            <p>
+              Volg de nazorginstructies die je van Simply Henna ontvangt.
+              Vermijd waar mogelijk vroeg watercontact en scrub het
+              hennadesign niet.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Hoe kan ik een afspraak maken?
+            </summary>
+
+            <p>
+              Je kunt een boekingsaanvraag indienen via ons officiële
+              boekingsformulier. Je kunt ook contact opnemen via Instagram,
+              TikTok of e-mail.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Is mijn aanvraag meteen een bevestigde afspraak?
+            </summary>
+
+            <p>
+              Nee. Een boekingsaanvraag is eerst een aanvraag.
+              Simply Henna bekijkt de aanvraag en neemt contact met je op
+              over de verdere afstemming en bevestiging.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Komen jullie ook op locatie?
+            </summary>
+
+            <p>
+              Locatiediensten kunnen mogelijk zijn na afstemming en
+              bevestiging door Simply Henna. Neem contact met ons op
+              om de mogelijkheden te bespreken.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Kan ik een eigen design of voorbeeld sturen?
+            </summary>
+
+            <p>
+              Ja. Je kunt jouw wensen, ideeën of voorbeelden delen.
+              Een voorbeeld dient als inspiratie en betekent niet
+              automatisch dat een exacte kopie wordt afgesproken.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Hoe kan ik betalen?
+            </summary>
+
+            <p>
+              De beschikbare betaalmethode wordt vooraf of tijdens
+              de afstemming met Simply Henna besproken.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Wat als ik een allergie of gevoelige huid heb?
+            </summary>
+
+            <p>
+              Meld relevante zorgen vóór de uitvoering. Simply Henna
+              kan aanvullende afstemming vragen. Bij medische twijfel
+              kun je het beste contact opnemen met een bevoegde
+              zorgprofessional.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEAM -->
+
+    <section class="section" id="team">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-label">
+            Ons team
+          </p>
+
+          <h2>
+            De mensen achter Simply Henna.
           </h2>
 
         </div>
 
 
-        <div class="features">
+        <div class="grid">
 
-          <article class="feature-card">
+          <article class="card">
 
-            <div class="feature-icon">
+            <div class="card-icon">
+              💼
+            </div>
+
+            <h3>
+              Zainedin
+            </h3>
+
+            <ul>
+              <li>Manager</li>
+              <li>Sitebeheer</li>
+              <li>Beheer social media</li>
+              <li>Penningmeester</li>
+              <li>Secretaris</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
+              🌿
+            </div>
+
+            <h3>
+              Simran
+            </h3>
+
+            <ul>
+              <li>Henna-artiest</li>
+              <li>Socialmedia-team</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
               ✨
             </div>
 
             <h3>
-              Persoonlijk
+              Nilaya
             </h3>
 
-            <p>
-              Geen moment is hetzelfde.
-              We nemen de tijd om henna
-              aan te brengen met aandacht
-              voor jou.
-            </p>
+            <ul>
+              <li>Henna-model</li>
+            </ul>
 
           </article>
 
 
-          <article class="feature-card">
+          <article class="card">
 
-            <div class="feature-icon">
-              🤎
+            <div class="card-icon">
+              👀
             </div>
 
             <h3>
-              Met aandacht
+              Jij?
             </h3>
 
             <p>
-              Van het eerste contact
-              tot jouw hennadesign.
-              Rustig, persoonlijk
-              en met zorg.
+              Zie jij jezelf binnenkort hier?
+              Stuur Simply Henna gerust een bericht via
+              een van onze officiële kanalen.
             </p>
-
-          </article>
-
-
-          <article class="feature-card">
-
-            <div class="feature-icon">
-              📅
-            </div>
-
-            <h3>
-              Eenvoudig gepland
-            </h3>
-
-            <p>
-              Geen ingewikkeld gedoe.
-              Maak eenvoudig een afspraak
-              en wij nemen contact met je op.
-            </p>
-
-            <a
-              href="#afspraak"
-              class="feature-link"
-            >
-              Afspraak maken →
-            </a>
 
           </article>
 
@@ -1293,43 +1602,75 @@
     </section>
 
 
-    <section
-      class="booking-section"
-      id="afspraak"
-    >
+    <!-- SOCIALS -->
+
+    <section class="section" id="socials">
 
       <div class="container">
 
-        <div class="booking-card">
+        <div class="section-heading">
 
-          <div class="booking-content">
+          <p class="section-label">
+            Volg Simply Henna
+          </p>
 
-            <p class="booking-label">
-              Klaar voor jouw henna?
-            </p>
+          <h2>
+            Meer henna op jouw tijdlijn.
+          </h2>
 
-            <h2>
-              Maak jouw afspraak.
-            </h2>
+          <p class="section-description">
+            Bekijk designs, video's, resultaten en updates
+            via onze officiële socialmedia-accounts.
+          </p>
+
+        </div>
+
+
+        <div class="grid">
+
+          <a
+            href="https://www.instagram.com/simplyhenna.nl/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card"
+            style="text-decoration: none;"
+          >
+
+            <div class="card-icon">
+              📸
+            </div>
+
+            <h3>
+              Instagram
+            </h3>
 
             <p>
-              Plan eenvoudig jouw afspraak
-              bij Simply Henna.
-              Na je aanvraag nemen we
-              contact met je op
-              over jouw afspraak.
+              @simplyhenna.nl
             </p>
 
-          </div>
+          </a>
 
 
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfkB9LVkBBbpQSWlFjx-OC2OGK4h0yEk_P9tOa5n7LJ_DdS_Q/viewform"
+            href="https://www.tiktok.com/@simplyhenna.nl"
             target="_blank"
             rel="noopener noreferrer"
-            class="booking-button"
+            class="card"
+            style="text-decoration: none;"
           >
-            Afspraak plannen →
+
+            <div class="card-icon">
+              🎵
+            </div>
+
+            <h3>
+              TikTok
+            </h3>
+
+            <p>
+              @simplyhenna.nl
+            </p>
+
           </a>
 
         </div>
@@ -1337,6 +1678,192 @@
       </div>
 
     </section>
+
+
+    <!-- PRIJZEN -->
+
+    <section class="section" id="prijzen">
+
+      <div class="container">
+
+        <div class="soon-card">
+
+          <div class="soon-content">
+
+            <span class="soon-badge">
+              Soon
+            </span>
+
+            <h2>
+              Onze prijzen komen eraan.
+            </h2>
+
+            <p>
+              We werken aan een duidelijk prijsoverzicht.
+              Binnenkort vind je hier meer informatie
+              over onze prijzen en mogelijkheden.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section class="section" id="reviews">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-label">
+            Ervaringen
+          </p>
+
+          <h2>
+            Wat wordt er over ons gezegd?
+          </h2>
+
+        </div>
+
+
+        <div class="grid">
+
+          <article class="card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “Super mooie henna en heel vriendelijk!”
+            </p>
+
+            <strong class="review-name">
+              — Rasha
+            </strong>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “Ik ben echt heel blij met het resultaat.
+              Zeker een aanrader!”
+            </p>
+
+            <strong class="review-name">
+              — Hanane
+            </strong>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “Mooie designs en een fijne ervaring.”
+            </p>
+
+            <strong class="review-name">
+              — Samira
+            </strong>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p class="review-text">
+              “Prachtig”
+            </p>
+
+            <strong class="review-name">
+              — Julie
+            </strong>
+
+          </article>
+
+        </div>
+
+
+        <div class="review-cta">
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScSIZD6Xz7IsPEDshL7FTAGA4rx-K3RMl0s8Wdr7Pnq75qPFw/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            Schrijf een review →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REPORT -->
+
+    <section class="section" id="report">
+
+      <div class="container">
+
+        <div class="report-card">
+
+          <div class="report-content">
+
+            <p class="section-label">
+              Help ons verbeteren
+            </p>
+
+            <h2>
+              Probleem of fout gevonden?
+            </h2>
+
+            <p>
+              Werkt er iets niet goed of heb je een probleem gevonden?
+              Meld het via ons officiële meldformulier.
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf-b9C0QNgzntwcA-qZKbUzeoMJE55OMRtVqYQeCIZyiq0CBw/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            Probleem melden →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
   </main>
 
@@ -1354,9 +1881,7 @@
           </p>
 
           <p class="footer-text">
-            ©
-            <span id="year"></span>
-            Simply Henna
+            © <span id="year"></span> Simply Henna
           </p>
 
         </div>
@@ -1364,12 +1889,36 @@
 
         <div class="footer-links">
 
-          <a href="voorwaarden.html">
-            Algemene voorwaarden
+          <a href="#home">
+            Home
           </a>
 
-          <a href="privacy.html">
-            Privacy
+          <a href="#faq">
+            FAQ
+          </a>
+
+          <a href="#socials">
+            Socials
+          </a>
+
+          <a href="#reviews">
+            Reviews
+          </a>
+
+          <a
+            href="https://rooster.simplyhenna.nl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medeweb
+          </a>
+
+          <a
+            href="https://docs.google.com/document/d/1hi4PzPtDr6bJ5N4LoPSYfFSQdVQ5zNbmKOvc_2ZGGZs/edit?tab=t.0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Algemene voorwaarden
           </a>
 
           <a
@@ -1388,10 +1937,61 @@
 
 
   <script>
-    document
-      .getElementById("year")
-      .textContent =
+    const year =
+      document.getElementById("year");
+
+    year.textContent =
       new Date().getFullYear();
+
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+
+    menuButton.addEventListener(
+      "click",
+      function () {
+        const isOpen =
+          mobileMenu.classList.toggle("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+        menuButton.textContent =
+          isOpen ? "×" : "☰";
+      }
+    );
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            mobileMenu
+              .classList
+              .remove("open");
+
+            menuButton
+              .setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            menuButton.textContent = "☰";
+
+          }
+        );
+
+      });
   </script>
 
 </body>
